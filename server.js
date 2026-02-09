@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const blocksFile = path.join(__dirname, 'blocks.bin');
-const wss = new WebSocket.Server({ port: 3000 });
+const PORT = process.env.PORT || 10000;
+const wss = new WebSocket.Server({ port: PORT });
 let blocks = {};
 
 // Dosyadan blokları yükle
